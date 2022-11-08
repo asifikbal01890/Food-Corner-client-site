@@ -1,0 +1,13 @@
+.header-img{
+    height: 800px;
+    width: 100%;
+}
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+    margin-top: -30%;
+    margin-left: 23%;
+    color: rgb(58, 58, 58);
+}
