@@ -45,8 +45,8 @@ const SignUp = () => {
      }
 
     return (
-        <div>
-            <div className='w-150 mx-auto bg-light shadow p-3 mb-5 bg-body rounded mt-5'>
+        <div className='pt-5 bg-secondary vw-100'>
+            <div className='w-150 mx-auto bg-light shadow p-3 mb-5 bg-body rounded'>
                 <div>
                     <h2>Create Your New Account</h2>
                 </div>

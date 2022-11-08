@@ -18,11 +18,11 @@ function App() {
           element: <Home></Home>
         },
         {
-          path: "/Services",
+          path: "/services",
           element: <Services></Services>
         },
         {
-          path: "/Blog",
+          path: "/blog",
           element: <Blog></Blog>
         },
         {

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import './NavBar.css'
 
 
 const NavBar = () => {
+    const {user, logOut} = useContext(AuthContext)
 return (
     <div>
         <nav class="navbar navbar-expand-lg bg-light shadow bg-body rounded">
@@ -24,21 +26,38 @@ return (
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-25 m-auto">
                 <li class="nav-item">
-                <Link to={'/home'} class="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >Home</Link>
+                <Link to={'/'} class="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >Home</Link>
                 </li>
                 <li class="nav-item">
-                <Link to={'/services'} class="nav-link active fw-semibold fs-5 ebtn rounded-3 mx-4" aria-current="page" >Services</Link>
+                <Link to={'/services'} class="nav-link active fw-semibold fs-5 ebtn rounded-3 mx-lg-3" aria-current="page" >Services</Link>
                 </li>
                 <li class="nav-item">
-                <Link to={'/Blog'} class="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >Blog</Link>
+                <Link to={'/blog'} class="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >Blog</Link>
+                </li>
+                <li class="nav-item d-lg-none">
+                {
+                    user?.uid ?
+                    <Link onClick={logOut} className="nav-link active fw-semibold fs-5 btn btn-primary px-3 py-2" >Logout</Link>
+                    :
+                    <>
+                    <Link to={'/register'} class="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >Sign up</Link>
+                    <Link to={'/login'} class="nav-link active fw-semibold fs-5 btn btn-primary px-3 py-2" aria-current="page" >Login</Link>
+                    </>
+                }
                 </li>
             </ul>
             </div>
-
-                <>
-                <Link to={'/register'} class="btn btn-light nav-link active fw-semibold fs-5 me-3 px-3 py-2" aria-current="page" >Sign up</Link>
-                <Link to={'/login'} class="nav-link active fw-semibold fs-5 btn btn-primary px-3 py-2" aria-current="page" >Login</Link>
-                </>
+            <div className="d-none d-lg-flex">
+                {
+                    user?.uid ?
+                    <Link onClick={logOut} className="nav-link active fw-semibold fs-5 btn btn-primary px-3 py-2" >Logout</Link>
+                    :
+                    <>
+                    <Link to={'/register'} class="btn btn-light nav-link active fw-semibold fs-5 me-3 px-3 py-2" aria-current="page" >Sign up</Link>
+                    <Link to={'/login'} class="nav-link active fw-semibold fs-5 btn btn-primary px-3 py-2" aria-current="page" >Login</Link>
+                    </>
+                }
+            </div>
         </div>
         </nav>
     </div>
