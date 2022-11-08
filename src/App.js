@@ -2,10 +2,10 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './Layout/Main/Main';
 import Home from './Component/Home/Home';
-import Services from './Component/Services/Services';
 import Blog from './Component/Blog/Blog';
 import Login from './Component/Login/Login';
 import SignUp from './Component/SignUp/SignUp';
+import FoodsContainer from './Component/FoodsContainer/FoodsContainer';
 
 function App() {
   const router = createBrowserRouter([
@@ -18,8 +18,9 @@ function App() {
           element: <Home></Home>
         },
         {
-          path: "/services",
-          element: <Services></Services>
+          path: "/Foods",
+          loader: () => fetch('http://localhost:5000/foods'),
+          element: <FoodsContainer></FoodsContainer>
         },
         {
           path: "/blog",
