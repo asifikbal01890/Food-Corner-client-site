@@ -36,7 +36,7 @@ return (
             </div>
 
                 <>
-                <Link to={'/sign up'} class="btn btn-light nav-link active fw-semibold fs-5 me-3 px-3 py-2" aria-current="page" >Sign up</Link>
+                <Link to={'/register'} class="btn btn-light nav-link active fw-semibold fs-5 me-3 px-3 py-2" aria-current="page" >Sign up</Link>
                 <Link to={'/login'} class="nav-link active fw-semibold fs-5 btn btn-primary px-3 py-2" aria-current="page" >Login</Link>
                 </>
         </div>

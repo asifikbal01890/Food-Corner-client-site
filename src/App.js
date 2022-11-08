@@ -2,6 +2,10 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './Layout/Main/Main';
 import Home from './Component/Home/Home';
+import Services from './Component/Services/Services';
+import Blog from './Component/Blog/Blog';
+import Login from './Component/Login/Login';
+import SignUp from './Component/SignUp/SignUp';
 
 function App() {
   const router = createBrowserRouter([
@@ -12,12 +16,28 @@ function App() {
         {
           path: "/",
           element: <Home></Home>
-        }
+        },
+        {
+          path: "/Services",
+          element: <Services></Services>
+        },
+        {
+          path: "/Blog",
+          element: <Blog></Blog>
+        },
+        {
+          path: "/login",
+          element: <Login></Login>
+        },
+        {
+          path: "/register",
+          element: <SignUp></SignUp>
+        },
       ]
     }
   ])
   return (
-    <div>
+    <div className="App">
       <RouterProvider router={router}></RouterProvider>
     </div>
   )

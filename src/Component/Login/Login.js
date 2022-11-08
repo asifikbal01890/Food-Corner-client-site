@@ -1,16 +1,16 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
-import './Login.css';
-import { FaGithub, FaGoogle } from "react-icons/fa";
-import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { FaGoogle } from "react-icons/fa";
+import { GoogleAuthProvider } from 'firebase/auth';
 import { useState } from 'react';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import './Login.css'
 
 
 const Login = () => {
     const [error, setError] = useState('');
-    const {signIn, googleSingIn, githubSingIn} = useContext(AuthContext);
+    const {signIn, googleSingIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -47,21 +47,9 @@ const Login = () => {
         .catch(e => setError(e.message))
     }
 
-    const githubProvider = new GithubAuthProvider();
-
-    const handleGithubSignIn = () => {
-        githubSingIn(githubProvider)
-        .then(result => {
-            const user = result.user;
-            // console.log(user);
-            navigate(from, {replace: true});
-        })
-        .catch(e => setError(e.message))
-    }
-
     return (
-        <div className='my-5'>
-            <div className='w-150 mx-auto bg-light shadow p-3 mb-5 bg-body rounded'>
+        <div className='pt-5 bg-secondary vw-100'>
+            <div className='bg-light w-150 mx-auto shadow p-3 mb-5 bg-body rounded'>
                 <div>
                     <h2>Please Login</h2>
                 </div>
@@ -82,13 +70,10 @@ const Login = () => {
                 <div>
                     or
                 </div>
-                <Link className='p-4' to={'/Register'}>Create New Account</Link>
+                <Link className='p-4' to={'/register'}>Create New Account</Link>
                 <div className='d-block pt-3'>
                     <div>
                         <button onClick={handleGoogleSingIn} type="button" className="btn btn-outline-success w-50"><FaGoogle></FaGoogle> Sing In by Google</button>
-                    </div>
-                    <div>
-                        <button onClick={handleGithubSignIn} type="button" className="btn btn-outline-secondary mt-3 w-50"><FaGithub></FaGithub>  Sing In by Github</button>
                     </div>
                 </div>
 
