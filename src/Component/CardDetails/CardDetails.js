@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import FoodReview from '../FoodReview/FoodReview';
 
 const CardDetails = () => {
     const food = useLoaderData();
@@ -20,10 +21,18 @@ const CardDetails = () => {
                 </div>
                 <button className='btn-pink text-white fs-4 fw-semibold px-5 pb-2 rounded-5'>Order Now</button>
             </div>
-            <div>
+            <div className='mt-5 border rounded-3 pt-4'>
+                <div>
+                    <h3 className='f-corner'>Review & More</h3>
+                </div>
+                <div className='pt-4'>
                 {
-                  
+                  food.review.map(oldUser=> <FoodReview
+                      key={oldUser.id} 
+                      oldUser={oldUser} 
+                  ></FoodReview>)  
                 }
+                </div>
             </div>
         </div>
     );
