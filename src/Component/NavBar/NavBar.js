@@ -40,7 +40,7 @@ return (
                 <li className="nav-item">
                 {
                     user?.uid ?
-                    <Link to={'/my-review'} className="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >My Review</Link>
+                    <Link to={'/myReview'} className="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >My Review</Link>
                     :
                     <>
 

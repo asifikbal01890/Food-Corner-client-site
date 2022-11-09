@@ -43,8 +43,8 @@ function App() {
           element:<CardDetails></CardDetails>
         },
         {
-          path: "/my-review",
-          loader: () => fetch('http://localhost:5000/review'),
+          path: "/myReview",
+          loader: () => fetch('http://localhost:5000/reviewer'),
           element: <MyReview></MyReview>
         }
       ]
