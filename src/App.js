@@ -15,6 +15,7 @@ function App() {
       children: [
         {
           path: "/",
+          loader: () => fetch('http://localhost:5000/foodsLimit'),
           element: <Home></Home>
         },
         {

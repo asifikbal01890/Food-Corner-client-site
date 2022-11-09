@@ -1,10 +1,15 @@
 import React from 'react';
-import { FaRegClock, FaWallet } from 'react-icons/fa';
+import { FaArrowRight, FaRegClock, FaWallet } from 'react-icons/fa';
+import { Link, useLoaderData } from 'react-router-dom';
+import FoodCards from '../FoodCards/FoodCards';
 import './Home.css'
 
 const Home = () => {
+    const foodItems = useLoaderData();
     return (
         <div>
+                {/* =======image slider======= */}
+
             <div id="carouselExampleDark" className="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -112,6 +117,25 @@ const Home = () => {
                     <span className="visually-hidden">Next</span>
                 </button>
                 </div>
+
+                {/* =====limited api load card===== */}
+
+                <div className='container mt-5'>
+                <div>
+                    <h1 className='f-corner text-orange'>Homemade Healthy & Testy foods</h1>
+                </div>
+                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
+                {
+                    foodItems.map( foodItem => <FoodCards
+                        key={foodItem.id}
+                        foodItem={foodItem}
+                    ></FoodCards>)
+                }
+                </div>
+            </div>
+            <div className='mt-4'>
+                <Link to={'/foods'}><button type="button" class="btn btn-outline-primary fs-5 fw-semibold px-5 pb-2 rounded-2">See All <FaArrowRight></FaArrowRight> </button></Link>
+            </div>
         </div>
     );
 };
