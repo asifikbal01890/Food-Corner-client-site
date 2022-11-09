@@ -6,6 +6,7 @@ import Blog from './Component/Blog/Blog';
 import Login from './Component/Login/Login';
 import SignUp from './Component/SignUp/SignUp';
 import FoodsContainer from './Component/FoodsContainer/FoodsContainer';
+import CardDetails from './Component/CardDetails/CardDetails';
 
 function App() {
   const router = createBrowserRouter([
@@ -19,7 +20,7 @@ function App() {
           element: <Home></Home>
         },
         {
-          path: "/Foods",
+          path: "/foods",
           loader: () => fetch('http://localhost:5000/foods'),
           element: <FoodsContainer></FoodsContainer>
         },
@@ -35,6 +36,11 @@ function App() {
           path: "/register",
           element: <SignUp></SignUp>
         },
+        {
+          path: "/foods/:id",
+          loader: ({params}) => fetch(`http://localhost:5000/foods/${params.id}`),
+          element:<CardDetails></CardDetails>
+        }
       ]
     }
   ])
