@@ -7,6 +7,7 @@ import Login from './Component/Login/Login';
 import SignUp from './Component/SignUp/SignUp';
 import FoodsContainer from './Component/FoodsContainer/FoodsContainer';
 import CardDetails from './Component/CardDetails/CardDetails';
+import MyReview from './Component/MyReview/MyReview';
 
 function App() {
   const router = createBrowserRouter([
@@ -40,6 +41,11 @@ function App() {
           path: "/foods/:id",
           loader: ({params}) => fetch(`http://localhost:5000/foods/${params.id}`),
           element:<CardDetails></CardDetails>
+        },
+        {
+          path: "/my-review",
+          loader: () => fetch('http://localhost:5000/review'),
+          element: <MyReview></MyReview>
         }
       ]
     }

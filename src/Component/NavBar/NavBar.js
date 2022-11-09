@@ -24,15 +24,28 @@ return (
                     </div>
             </Link>
             <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-25 m-auto">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 m-auto">
                 <li className="nav-item">
                 <Link to={'/'} className="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >Home</Link>
                 </li>
                 <li className="nav-item">
-                <Link to={'/Foods'} className="nav-link active fw-semibold fs-5 ebtn rounded-3 mx-lg-3" aria-current="page" >Foods</Link>
+                <Link to={'/Foods'} className="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >Foods</Link>
                 </li>
                 <li className="nav-item">
                 <Link to={'/blog'} className="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >Blog</Link>
+                </li>
+                <li>
+                <Link to={'/orders'} className="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >Orders</Link>
+                </li>
+                <li className="nav-item">
+                {
+                    user?.uid ?
+                    <Link to={'/my-review'} className="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >My Review</Link>
+                    :
+                    <>
+
+                    </>
+                }
                 </li>
                 <li className="nav-item d-lg-none">
                 {

@@ -6,7 +6,7 @@ import FoodCards from '../FoodCards/FoodCards';
 const FoodsContainer = () => {
 
     const foodItems = useLoaderData();
-    console.log(foodItems);
+
     return (
         <div className='mt-5 container'>
             <h1 className='f-corner text-orange'>Welcome to our Foods Container</h1>

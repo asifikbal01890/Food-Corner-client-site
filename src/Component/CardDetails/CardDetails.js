@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import CustomersReview from '../CustomersReview/CustomersReview';
 import FoodReview from '../FoodReview/FoodReview';
 
 const CardDetails = () => {
@@ -28,11 +29,22 @@ const CardDetails = () => {
                 <div className='pt-4'>
                 {
                   food.review.map(oldUser=> <FoodReview
-                      key={oldUser.id} 
+                      key={oldUser._id} 
                       oldUser={oldUser} 
                   ></FoodReview>)  
                 }
                 </div>
+            </div>
+            <div>
+            <div>
+                <div className='pt-5 pb-2'>
+                    <h2 className='f-corner'>Right Yours Comment For Foods</h2>
+                </div>
+            <CustomersReview
+             key={food.id}
+             food={food}
+            ></CustomersReview>
+            </div>
             </div>
         </div>
     );
