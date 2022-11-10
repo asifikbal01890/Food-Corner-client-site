@@ -4,11 +4,9 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import NewReview from '../NewReview/NewReview';
 
 const MyReview = () => {
-    const [isLoading, setIsLoading] = useState(true)
     const {user} = useContext(AuthContext);
-    console.log(user?.email);
-    const [reviews, setReviews] = useState({});
-    console.log(reviews);
+    const [reviews, setReviews] = useState([]);
+
     
     useEffect( () =>{
         
@@ -31,7 +29,7 @@ const MyReview = () => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         alert('Remove successfully');
-                        const remaining = reviews.filter(odr => odr._id !== id);
+                        const remaining = reviews.filter(rv => rv._id !== id);
                         setReviews(remaining);
                     }
                 })

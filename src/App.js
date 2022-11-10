@@ -9,7 +9,7 @@ import FoodsContainer from './Component/FoodsContainer/FoodsContainer';
 import CardDetails from './Component/CardDetails/CardDetails';
 import MyReview from './Component/MyReview/MyReview';
 import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
-import Orders from './Component/Orders/Orders';
+import AddService from './Component/AddService/AddService';
 
 function App() {
   const router = createBrowserRouter([
@@ -49,8 +49,8 @@ function App() {
           element: <MyReview></MyReview>
         },
         {
-          path: "/orders",
-          element: <PrivateRoute><Orders></Orders></PrivateRoute>
+          path: "/addService",
+          element: <PrivateRoute><AddService></AddService></PrivateRoute>
         }
       ]
     }

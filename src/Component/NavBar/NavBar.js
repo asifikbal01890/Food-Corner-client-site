@@ -35,7 +35,7 @@ return (
                 <Link to={'/blog'} className="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >Blog</Link>
                 </li>
                 <li>
-                <Link to={'/orders'} className="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >Orders</Link>
+                <Link to={'/addService'} className="nav-link active fw-semibold fs-5 ebtn rounded-3" aria-current="page" >Add Service</Link>
                 </li>
                 <li className="nav-item">
                 {

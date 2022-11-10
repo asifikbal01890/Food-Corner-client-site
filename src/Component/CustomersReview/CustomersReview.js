@@ -65,7 +65,7 @@ const CustomersReview = ({food}) => {
            
             </div>
             <div className="mb-3">
-            <label for="exampleFormControlTextarea1" className="form-label">Example textarea</label>
+            <label for="exampleFormControlTextarea1" className="form-label">Comment</label>
             <textarea name='text' className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             <button className='btn btn-outline-primary fw-semibold mt-4'>Add Review</button>
             </div>
