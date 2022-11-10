@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { FaThemeco } from 'react-icons/fa';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const CustomersReview = ({food}) => {
@@ -18,7 +17,7 @@ const CustomersReview = ({food}) => {
         const text = form.text.value;
 
     const reviewer = {
-        _id: _id,
+        id: _id,
         foodName: name,
         email,
         userName,
@@ -26,12 +25,12 @@ const CustomersReview = ({food}) => {
         text
     }    
 
-    if(userrating.length > 2){
-        alert('Make rating only 1 Characters')
-    }
-    else if (userrating > 6 && userrating < -1) {
-        alert('Make rating only 0-5 Number')
-    }
+    // if(userrating.length > 2){
+    //     alert('Make rating only 1 Characters')
+    // }
+    // else if (userrating > 6 && userrating < -1) {
+    //     alert('Make rating only 0-5 Number')
+    // }
     
 
     fetch('http://localhost:5000/reviewer', {
@@ -59,7 +58,7 @@ const CustomersReview = ({food}) => {
         <div className="mb-3 r0">
            <div className='d-flex mb-3'>
            <input name="name" type="name" className="form-control me-3" id="exampleFormControlInput1" placeholder="name"/>
-           <input name="rating" type="rating" className="form-control" id="exampleFormControlInput1" placeholder="rating"/>
+           <input name="rating" type="number" className="form-control" id="exampleFormControlInput1" placeholder="rating"/>
            </div>
             <input name="email" type="email" className="form-control" id="exampleFormControlInput1" placeholder="email" defaultValue={user?.email}/>
            
