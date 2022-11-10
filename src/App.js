@@ -8,6 +8,8 @@ import SignUp from './Component/SignUp/SignUp';
 import FoodsContainer from './Component/FoodsContainer/FoodsContainer';
 import CardDetails from './Component/CardDetails/CardDetails';
 import MyReview from './Component/MyReview/MyReview';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
+import Orders from './Component/Orders/Orders';
 
 function App() {
   const router = createBrowserRouter([
@@ -44,8 +46,11 @@ function App() {
         },
         {
           path: "/myReview",
-          loader: () => fetch('http://localhost:5000/reviewer'),
           element: <MyReview></MyReview>
+        },
+        {
+          path: "/orders",
+          element: <PrivateRoute><Orders></Orders></PrivateRoute>
         }
       ]
     }

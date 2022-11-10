@@ -26,7 +26,7 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             const user = result.user;
-            // console.log(user);
+            console.log(user);
             form.reset();
             setError('');
             navigate(from, {replace: true});
@@ -41,7 +41,7 @@ const Login = () => {
         googleSingIn(googleProvider)
         .then(result => {
             const user = result.user;
-            
+            console.log(user);
             navigate(from, {replace: true});
         })
         .catch(e => setError(e.message))

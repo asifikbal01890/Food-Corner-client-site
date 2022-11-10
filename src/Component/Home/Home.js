@@ -8,7 +8,7 @@ const Home = () => {
     const foodItems = useLoaderData();
     return (
         <div>
-                {/* =======image slider======= */}
+                {/* ======= image slider ======= */}
 
             <div id="carouselExampleDark" className="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div className="carousel-indicators">
@@ -118,7 +118,7 @@ const Home = () => {
                 </button>
                 </div>
 
-                {/* =====limited api load card===== */}
+                {/* ===== limited api load card ===== */}
 
                 <div className='container mt-5'>
                 <div>
@@ -134,8 +134,27 @@ const Home = () => {
                 </div>
             </div>
             <div className='mt-4'>
-                <Link to={'/foods'}><button type="button" class="btn btn-outline-primary fs-5 fw-semibold px-5 pb-2 rounded-2">See All <FaArrowRight></FaArrowRight> </button></Link>
+                <Link to={'/foods'}><button type="button" className="btn btn-outline-primary fs-5 fw-semibold px-5 pb-2 rounded-2">See All <FaArrowRight></FaArrowRight> </button></Link>
             </div>
+            {/* ======= extra section-1 ====== */}
+            <div className='container mt-5'>
+                <div className="mb-3">
+                <div className="row g-0">
+                    <div className="col-md-6">
+                    <img src="https://img.freepik.com/premium-vector/chef-cooker-man-cooking-kitchen-restaurant-vector-illustration_605517-170.jpg?w=826" className="w-75" alt="..."/>
+                    </div>
+                    <div className="col-md-6 d-flex align-items-center">
+                    <div className="card-body">
+                            <h1 className='f-corner'>HEllO!</h1>
+                            <h2>I am <strong className='f-corner text-orange'>Peter Parker</strong></h2>
+                        <p className="card-text">We can say that a chef is an all-in-all person who manages restaurant matters diligently. From deciding the menu of the restaurant to buying the food supplies and managing the food preparation, a chef ensures that visitors and guests receive the best cuisines.</p>
+                       
+                    </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+               {/* ======= extra section-2 ====== */}
         </div>
     );
 };
