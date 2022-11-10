@@ -22,6 +22,22 @@ const AddService = () => {
         price,
         rating,
     }
+    fetch('https://food-corner-server-site.vercel.app/foods', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(foods)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.acknowledged){
+                alert('Add service implement success');
+                form.reset();
+            }
+        })
+        .catch(e => console.error(e));
 }
 
     return (

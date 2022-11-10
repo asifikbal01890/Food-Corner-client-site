@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
+import MyReview from '../MyReview/MyReview';
 import './FoodReview.css';
 
 const FoodReview = ({oldUser}) => {

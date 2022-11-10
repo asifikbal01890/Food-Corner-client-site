@@ -19,12 +19,12 @@ function App() {
       children: [
         {
           path: "/",
-          loader: () => fetch('http://localhost:5000/foodsLimit'),
+          loader: () => fetch('https://food-corner-server-site.vercel.app/foodsLimit'),
           element: <Home></Home>
         },
         {
           path: "/foods",
-          loader: () => fetch('http://localhost:5000/foods'),
+          loader: () => fetch('https://food-corner-server-site.vercel.app/foods'),
           element: <FoodsContainer></FoodsContainer>
         },
         {
@@ -41,7 +41,7 @@ function App() {
         },
         {
           path: "/foods/:id",
-          loader: ({params}) => fetch(`http://localhost:5000/foods/${params.id}`),
+          loader: ({params}) => fetch(`https://food-corner-server-site.vercel.app/foods/${params.id}`),
           element:<CardDetails></CardDetails>
         },
         {

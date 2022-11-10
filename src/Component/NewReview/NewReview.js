@@ -6,7 +6,6 @@ import './NewReview.css';
 const NewReview = ({review, handleRemove}) => {
     const {user} = useContext(AuthContext)
     const {text, userrating, userName, foodName, _id} = review
-    console.log(_id)
     return (
         <div className='w-75 mx-auto'>
             <div className="mb-3 w-75 mx-auto">

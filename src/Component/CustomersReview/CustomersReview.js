@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const CustomersReview = ({food}) => {
-    console.log(food);
 
     const {_id, name} = food;
 
     const {user} = useContext(AuthContext);
+
 
     const handleReview = event =>{
         event.preventDefault();
@@ -25,15 +25,12 @@ const CustomersReview = ({food}) => {
         text
     }    
 
-    // if(userrating.length > 2){
-    //     alert('Make rating only 1 Characters')
-    // }
-    // else if (userrating > 6 && userrating < -1) {
-    //     alert('Make rating only 0-5 Number')
-    // }
+    if(!user){
+        return alert('Login 1st');
+    }
     
 
-    fetch('http://localhost:5000/reviewer', {
+    fetch('https://food-corner-server-site.vercel.app/reviewer', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

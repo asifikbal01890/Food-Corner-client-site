@@ -10,19 +10,19 @@ const MyReview = () => {
     
     useEffect( () =>{
         
-        fetch(`http://localhost:5000/reviewer?email=${user?.email}`)
+        fetch(`https://food-corner-server-site.vercel.app/reviewer?email=${user?.email}`)
         .then(res =>  res.json())
         .then(data =>  {
             setReviews(data)
         })
-        .catch(err=> console.log(err))
+        .catch(err => console.error(err))
     }, [user?.email])
 
 
     const handleRemove = id => {
         const proceed = window.confirm('Are you sure to Remove');
         if (proceed) {
-            fetch(`http://localhost:5000/reviewer/${id}`, {
+            fetch(`https://food-corner-server-site.vercel.app/reviewer/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

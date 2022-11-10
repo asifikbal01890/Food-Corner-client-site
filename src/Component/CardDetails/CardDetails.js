@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CustomersReview from '../CustomersReview/CustomersReview';
 import FoodReview from '../FoodReview/FoodReview';
+import MyReview from '../MyReview/MyReview';
 
 const CardDetails = () => {
     const food = useLoaderData();
@@ -28,10 +29,19 @@ const CardDetails = () => {
                 </div>
                 <div className='pt-4'>
                 {
+                  food?.review ?
+                  <>
+                  {
                   food.review.map(oldUser=> <FoodReview
                       key={oldUser._id} 
                       oldUser={oldUser} 
                   ></FoodReview>)  
+                  }
+                  </>
+                  :
+                  <>
+                  <div className=''>No review for this item</div>
+                  </>  
                 }
                 </div>
             </div>
